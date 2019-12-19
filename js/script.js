@@ -49,16 +49,41 @@ function printQuote(){
   let quo = getRandomQuote();
   let quoHtml = `<p class="quote"> ${quo.quote} </p> <p class="source"> ${quo.source}`;
   if (quo.album){
-    return quoHtml += quoHtml + `<span class="citation"> ${quo.album} </span>`;
+    quoHtml += `<span class="citation"> ${quo.album} </span>`;
   }
   if (quo.year){
-    return quoHtml += `<span class="year"> ${quo.year} </span>`;
+    quoHtml += `<span class="year"> ${quo.year} </span>`;
+  }
+  if (quo.source === "'Halloween' by the Misfits"){
+    document.body.style.backgroundColor = "black";
+    document.body.style.color = "orange";
+  } else {
+    document.body.style.backgroundColor = "rgb(58, 193, 98)";
+    document.body.style.color = "white";
   }
   quoHtml += "</p>";
-  document.getElementById('quote-box').innerHTML = quoHtml
+  return document.getElementById('quote-box').innerHTML = quoHtml;
 }
 console.log(printQuote());
-
+/*
+  if (quo.source === "'Halloween' by the Misfits"){
+    document.body.style.backgroundColor = "black";
+    document.body.style.color = "orange";
+  } else {
+    document.body.style.backgroundColor = "rgb(58, 193, 98)";
+    document.body.style.color = "white";
+  }
+else if (quo.source === "And now you're trapped like a rat on a sinking ship") {
+  document.body.style.backgroundColor = "black";
+  document.body.style.color = "white";
+} else if (quo[2]){
+  document.body.style.backgroundColor = "rgb(93, 166, 216)";
+  document.body.style.color = "lightpink";
+} else if (quo[3]) {
+  document.body.style.backgroundColor = "black";
+  document.body.style.color = "rgb(114, 8, 8)";
+}
+*/
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
